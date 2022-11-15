@@ -1,0 +1,18 @@
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div *ngFor="let product of producto" class="col-12 col-sm-6 col-md-4 col-lg-4 text-center styleProduct" >
+            <h3 class="text-aline-center">{{product.detalleProducto}}</h3>
+            <img width="70%" src="{{product.urlImagen}}" alt="imagen laptop">
+            <br><br>
+            <p class="text-aline-rigth">Precio Unitario: {{product.precio | currency}}</p>
+            <p class="text-aline-rigth">Cantidad disponible: {{product.cantidadDisponible}}</p>
+            <button class="btn btn-primary" (click)="dirigirseProducto(product.idProducto)">Ver Producto</button>
+        </div>
+    </div>
+</div>
+<div>
+    <button [routerLink]="['/carrito']" class="float">
+        <i  class="fa fa-whatsapp my-float">Productos seleccionados: </i> 
+    </button>
+</div>

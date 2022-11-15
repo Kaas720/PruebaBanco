@@ -1,0 +1,27 @@
+
+<div class="container">
+    <br><br>
+    <div *ngFor="let product of producto" class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+            <img width="100%" class="img-fluid" src="{{product.urlImagen}}" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+            <h1>{{product.detalleProducto}}</h1>
+            <p>{{product.descripcionProducto}}</p>
+            <p>{{product.precio | currency}}</p>
+            <p>{{product.cantidadDisponible}}</p>
+            <p>{{product.cantidadDisponible*product.precio | currency}}</p>
+        </div>
+    </div>
+    <br>
+    <h3>
+        Valor a pagar final: {{precioFinalPagar | currency}}
+    </h3>
+    <br>
+    <div class="w-100 text-center">
+        <button class="btn btn-primary">Pagar</button>
+        &nbsp;&nbsp;
+        <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+    </div>
+    <br><br><br><br>
+</div>

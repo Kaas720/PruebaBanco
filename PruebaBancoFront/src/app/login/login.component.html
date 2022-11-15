@@ -1,0 +1,22 @@
+<div class="estiloContenedor">
+    <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()" class="estiloForm">
+      <mat-form-field class="aparienciaInput">
+        <input matInput placeholder="Usuario" formControlName="correo">
+        <mat-error *ngIf="usuarioLogin.get('correo')?.errors?.['required']">
+          Correo Requerido 
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="aparienciaInput">
+          <input matInput placeholder="Password" formControlName="paasword" type="password">
+          <mat-error *ngIf="usuarioLogin.get('paasword')?.errors?.['required']">
+            Contraseña Requerido
+        </mat-error>
+      </mat-form-field>
+      <div class="disenoContenedorBoton">
+        <div class="button-Alinear">
+          <button mat-raised-button [disabled] = "!usuarioLogin.valid">Continuar</button>
+        </div>
+      </div>
+    </form>
+</div>

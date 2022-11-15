@@ -1,0 +1,15 @@
+<header>
+    <h1>Sistema de compras online</h1>
+    <div style="position:absolute; top:18px; right:10px">
+        <button mat-raised-button color="primary" [routerLink]="['']">Inicio</button>
+        &nbsp;
+        <div *ngIf="!nombreCliente; else IniciarSesion" style="display: inline;">
+            <button mat-raised-button color="primary" [routerLink]="['/Login']">Iniciar Sesión</button>
+        </div>
+        &nbsp;
+        <ng-template #IniciarSesion>
+            <a mat-raised-button color="primary">{{clienteNombre}}</a>
+        </ng-template>
+        
+    </div>
+</header>
